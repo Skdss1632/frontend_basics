@@ -1,6 +1,6 @@
-opencv-python
-Pillow
-pyautogui
-pytesseract
-schedule
-selenium
+pip install opencv-python
+pip install Pillow
+pip install pyautogui
+pip install pytesseract
+pip install schedule
+pip install selenium
