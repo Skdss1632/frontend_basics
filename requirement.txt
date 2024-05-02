@@ -1,6 +1,6 @@
-pip install opencv-python
-pip install Pillow
-pip install pyautogui
-pip install pytesseract
-pip install schedule
-pip install selenium
+opencv-python==4.9.0.80
+Pillow==10.3.0
+pyautogui==0.9.54
+pytesseract==0.3.10
+schedule==1.2.1
+selenium==4.20.0
