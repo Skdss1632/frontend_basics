@@ -1,0 +1,4 @@
+selenium>=4.20.0
+PyAutoGUI>=0.9.54
+schedule>=1.2.1
+pytesseract>=0.3.10
