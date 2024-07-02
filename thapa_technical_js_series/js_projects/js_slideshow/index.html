@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+</head>
+<body>
+    <img name="slide" width="400" height="200">
+
+    <script>
+        var i = 0; // start point
+        var images = [];
+        var time = 3000;
+
+        // image list
+        images[0] = "image1.jpg";
+        images[1] = "image2.jpg";
+        images[2] = "image3.jpg";
+
+        // change image
+        function changeImg() {
+            document.slide.src = images[i];
+
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout(changeImg, time); // passing the function directly is recommended
+        }
+
+        window.onload = changeImg;
+    </script>
+</body>
+</html>
