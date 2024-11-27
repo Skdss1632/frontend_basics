@@ -1,34 +1,36 @@
-// src/App.js
 import React, { useState } from "react";
-import FormComponent from "./components/FormComponent";
 import TableComponent from "./components/TableComponent";
+import ModalComponent from "./components/ModalComponent";
 import "./style.css";
 
 export default function App() {
-    // setup default fld value n destructing arr
-    const [formData, setFormData] = useState({ name: "", email: "", age: "" , phone: ""});
     const [tableData, setTableData] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [formData, setFormData] = useState({ name: "", email: "", age: "", phone: "" });
 
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (event) => {
-        // preventDefault is used to prevent default behavoiur of browsers like page reloading after clicking on submit
-        event.preventDefault();
+    const handleAddToTable = () => {
         setTableData([...tableData, formData]);
-        setFormData({ name: "", email: "", age: "" , phone: ""});
+        setFormData({ name: "", email: "", age: "", phone: "" });
+        setIsModalOpen(false); // Close modal after adding data
     };
 
     return (
         <div style={{ padding: "20px" }}>
-            <h1>User Data Form</h1>
-            <FormComponent
-                formData={formData}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-            />
+            <h1>Data Table with Modal</h1>
+            <button onClick={() => setIsModalOpen(true)}>Create</button>
+            {isModalOpen && (
+                <ModalComponent
+                    formData={formData}
+                    handleChange={handleChange}
+                    handleAddToTable={handleAddToTable}
+                    closeModal={() => setIsModalOpen(false)}
+                />
+            )}
             <TableComponent tableData={tableData} />
         </div>
     );
