@@ -65,7 +65,7 @@ table th {
 
 
 
-Modal Overlay
+/* Modal Overlay */
 .modal-overlay {
     /*with position we have to add top,left,right,bottom also if not we can not see any changes on ui*/
     /* with postition fixed if there is a div box and in inner side txt is presnent if we scroll then div box will not scroll it will be fixed it will do not move */
