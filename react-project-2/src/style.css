@@ -1,4 +1,4 @@
-/* App.css */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -63,14 +63,18 @@ table th {
 }
 
 
-/* Modal Overlay */
+
+
+Modal Overlay
 .modal-overlay {
+    /*with position we have to add top,left,right,bottom also if not we can not see any changes on ui*/
+    /* with postition fixed if there is a div box and in inner side txt is presnent if we scroll then div box will not scroll it will be fixed it will do not move */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,3 +82,31 @@ table th {
 }
 
 /* Modal Content */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-buttons button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.modal-buttons button:hover {
+    background-color: rgb(28, 14, 156);
+}

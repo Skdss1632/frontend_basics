@@ -13,10 +13,11 @@ export default function App() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleAddToTable = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
         setTableData([...tableData, formData]);
         setFormData({ name: "", email: "", age: "", phone: "" });
-        setIsModalOpen(false); // Close modal after adding data
+        setIsModalOpen(false); // Close the modal after adding data
     };
 
     return (
@@ -27,7 +28,7 @@ export default function App() {
                 <ModalComponent
                     formData={formData}
                     handleChange={handleChange}
-                    handleAddToTable={handleAddToTable}
+                    handleSubmit={handleSubmit}
                     closeModal={() => setIsModalOpen(false)}
                 />
             )}

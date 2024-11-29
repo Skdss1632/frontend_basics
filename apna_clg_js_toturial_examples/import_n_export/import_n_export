@@ -1,0 +1,6 @@
+// if we export by default we do not need to add {} curly brackets while importing
+
+
+// if we do not export by default we need to add {} curly brackets while importing
+
+// for css file we need to add the .css in last while importing
