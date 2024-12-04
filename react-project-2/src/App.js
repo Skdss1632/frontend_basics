@@ -4,9 +4,41 @@ import ModalComponent from "./components/ModalComponent";
 import "./style.css";
 
 export default function App() {
+    // store these table data into the redux toolkit and fetch these data from the redux
     const [tableData, setTableData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [formData, setFormData] = useState({ name: "", email: "", age: "", phone: "" });
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        gender: "",
+        age: "",
+        email: "",
+        phone: "",
+        preferredContactMethod: "",
+        alternatePhone: "",
+        emergencyContact: "",
+        city: "",
+        state: "",
+        zip: "",
+        country: "",
+        qualification: "",
+        graduationYear: "",
+        specialization: "",
+        employmentStatus: "",
+        jobTitle: "",
+        currentCompany: "",
+        experience: "",
+        linkedin: "",
+        skills: "",
+        certifications: "",
+        hobbies: "",
+        languages: "",
+        maritalStatus: "",
+        nationality: "",
+        references: "",
+        portfolio: "",
+        lastUpdate: "",
+    });
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -20,8 +52,10 @@ export default function App() {
         setIsModalOpen(false); // Close the modal after adding data
     };
 
+
+
     return (
-        <div style={{ padding: "20px" }}>
+        <div style={{ padding: "20px", }}>
             <h1>Data Table with Modal</h1>
             <button onClick={() => setIsModalOpen(true)}>Create</button>
             {isModalOpen && (
@@ -32,7 +66,14 @@ export default function App() {
                     closeModal={() => setIsModalOpen(false)}
                 />
             )}
-            <TableComponent tableData={tableData} />
+            <TableComponent
+            tableData={tableData}
+            setIsModalOpen={setIsModalOpen}
+            formData={formData}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            isModalOpen={isModalOpen}
+            />
         </div>
     );
 }
