@@ -4,8 +4,7 @@ import "../style.css";
 
 export default function ModalComponent({ formData, handleChange, handleSubmit, closeModal }) {
     const inputFields = [
-        { label: "First Name", type: "text", name: "firstName", placeholder: "Enter first name" },
-        { label: "Last Name", type: "text", name: "lastName", placeholder: "Enter last name" },
+        { label: "Name", type: "text", name: "name", placeholder: "Enter name" },
         { label: "Gender", type: "text", name: "gender", placeholder: "Enter gender" },
         { label: "Age", type: "number", name: "age", placeholder: "Enter age" },
         { label: "Email", type: "email", name: "email", placeholder: "Enter email" },
@@ -50,6 +49,7 @@ export default function ModalComponent({ formData, handleChange, handleSubmit, c
                             name={field.name}
                             placeholder={field.placeholder}
                             value={formData[field.name]}
+                            // value="sourav"
                             onChange={handleChange}
                         />
                     ))}

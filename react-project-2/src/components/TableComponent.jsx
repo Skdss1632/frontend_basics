@@ -128,7 +128,7 @@ export default function TableComponent({tableData, setIsModalOpen, formData, han
             <td><InputComponent name="graduationYear" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
             <td><InputComponent name="specialization" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
             <td><InputComponent name="employmentStatus" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="jobTitle" onDoubleClick={(e) => handleCtrlDoubleClick(e, 'jobTitle')} /></td>
+            <td><InputComponent name="jobTitle" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
             <td><InputComponent name="currentCompany" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
             <td><InputComponent name="experience" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
             <td><InputComponent name="linkedin" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>

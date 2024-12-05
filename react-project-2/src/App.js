@@ -2,45 +2,17 @@ import React, { useState } from "react";
 import TableComponent from "./components/TableComponent";
 import ModalComponent from "./components/ModalComponent";
 import "./style.css";
+import mockData from "./components/random";
+
 
 export default function App() {
     // store these table data into the redux toolkit and fetch these data from the redux
     const [tableData, setTableData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        gender: "",
-        age: "",
-        email: "",
-        phone: "",
-        preferredContactMethod: "",
-        alternatePhone: "",
-        emergencyContact: "",
-        city: "",
-        state: "",
-        zip: "",
-        country: "",
-        qualification: "",
-        graduationYear: "",
-        specialization: "",
-        employmentStatus: "",
-        jobTitle: "",
-        currentCompany: "",
-        experience: "",
-        linkedin: "",
-        skills: "",
-        certifications: "",
-        hobbies: "",
-        languages: "",
-        maritalStatus: "",
-        nationality: "",
-        references: "",
-        portfolio: "",
-        lastUpdate: "",
-    });
+    const [formData, setFormData] = useState(mockData);
 
     const handleChange = (event) => {
+        // get name and its value
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     };
@@ -48,7 +20,7 @@ export default function App() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setTableData([...tableData, formData]);
-        setFormData({ name: "", email: "", age: "", phone: "" });
+        setFormData(mockData); // Reset form to mock data after submission
         setIsModalOpen(false); // Close the modal after adding data
     };
 
