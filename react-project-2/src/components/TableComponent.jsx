@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { InputComponent } from './InputComponent';
-import ModalComponent from './ModalComponent';
+import { InputComponent } from "./InputComponent";
+import { ModalComponent } from "./ModalComponent";
 
-
-export default function TableComponent({tableData, setIsModalOpen, formData, handleChange, handleSubmit, isModalOpen}){
-
+export function TableComponent({
+  tableData,
+  setIsModalOpen,
+  formData,
+  handleChange,
+  handleSubmit,
+  isModalOpen,
+}) {
   const [timestamps, setTimestamps] = useState([]);
 
   useEffect(() => {
@@ -19,7 +24,6 @@ export default function TableComponent({tableData, setIsModalOpen, formData, han
     return () => clearInterval(interval);
   }, [tableData]);
 
-
   // Event handler for Ctrl + double-click on input field
   const handleCtrlDoubleClick = (event) => {
     console.log("Double click detected. Ctrl pressed:", event.ctrlKey);
@@ -28,8 +32,6 @@ export default function TableComponent({tableData, setIsModalOpen, formData, han
       setIsModalOpen(true);
     }
   };
-
-
 
   return (
     <div className="table-container">
@@ -76,83 +78,112 @@ export default function TableComponent({tableData, setIsModalOpen, formData, han
             const lastName = rest.join(" ");
             return (
               <tr key={index}>
-                <td>{firstName}</td>
-                <td>{lastName}</td>
-                <td>{row.gender}</td>
-                <td>{row.age}</td>
-                <td>{row.email}</td>
-                <td>{row.phone}</td>
-                <td>{row.preferredContactMethod}</td>
-                <td>{row.alternatePhone}</td>
-                <td>{row.emergencyContact}</td>
-                <td>{row.city}</td>
-                <td>{row.state}</td>
-                <td>{row.zip}</td>
-                <td>{row.country}</td>
-                <td>{row.qualification}</td>
-                <td>{row.graduationYear}</td>
-                <td>{row.specialization}</td>
-                <td>{row.employmentStatus}</td>
-                <td>{row.jobTitle}</td>
-                <td>{row.currentCompany}</td>
-                <td>{row.experience}</td>
-                <td>{row.linkedin}</td>
-                <td>{row.skills}</td>
-                <td>{row.certifications}</td>
-                <td>{row.hobbies}</td>
-                <td>{row.languages}</td>
-                <td>{row.maritalStatus}</td>
-                <td>{row.nationality}</td>
-                <td>{row.references}</td>
-                <td>{row.portfolio}</td>
-                <td>{row.lastUpdate}</td>
-                <td>{timestamps[index]}</td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {firstName}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {lastName}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.gender}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.age}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.email}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.phone}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.preferredContactMethod}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.alternatePhone}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.emergencyContact}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.city}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.state}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.zip}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.country}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.qualification}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.graduationYear}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.specialization}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.employmentStatus}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.jobTitle}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.currentCompany}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.experience}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.linkedin}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.skills}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.certifications}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.hobbies}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.languages}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.maritalStatus}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.nationality}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.references}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.portfolio}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {row.lastUpdate}
+                </td>
+                <td onDoubleClick={(e) => handleCtrlDoubleClick(e)}>
+                  {timestamps[index]}
+                </td>
               </tr>
             );
           })}
-          <tr>
-            <td><InputComponent name="firstName" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="lastName" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="gender" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="age" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="email" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="phone" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="preferredContactMethod" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="alternatePhone" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="emergencyContact" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="city" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="state" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="zip" onDoubleClick={(e) => handleCtrlDoubleClick(e,)} /></td>
-            <td><InputComponent name="country" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="qualification" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="graduationYear" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="specialization" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="employmentStatus" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="jobTitle" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="currentCompany" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="experience" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="linkedin" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="skills" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="certifications" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="hobbies" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="languages" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="maritalStatus" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="nationality" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="references" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="portfolio" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="lastUpdate" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-            <td><InputComponent name="timestamp" onDoubleClick={(e) => handleCtrlDoubleClick(e)} /></td>
-          </tr>
         </tbody>
       </table>
 
       {/* Modal */}
       {isModalOpen && (
         <ModalComponent
-        formData={formData}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        closeModal={() => setIsModalOpen(false)}
+          formData={formData}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          closeModal={() => setIsModalOpen(false)}
         />
       )}
     </div>

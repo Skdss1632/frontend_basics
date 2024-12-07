@@ -1,12 +1,13 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
-import { Provider } from 'react-redux'
+import { configureStore } from '@reduxjs/toolkit';
+import { tableReducer } from '../features/tableSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer
+    table: tableReducer, // Add table slice to the store
   },
-})
+});
+
+
 
 //steps:
 // create store

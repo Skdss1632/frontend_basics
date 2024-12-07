@@ -1,9 +1,9 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 import counterReducer from '../features/counter/counterSlice'
-import { Provider } from 'react-redux'
 
 export const store = configureStore({
   reducer: {
+    // below written (counter) is came from the slice name and  (counterReducer) came from the slice
     counter: counterReducer
   },
 })

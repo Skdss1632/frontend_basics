@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import TableComponent from "./components/TableComponent";
-import ModalComponent from "./components/ModalComponent";
+import { TableComponent } from "./components/TableComponent";
+import { ModalComponent } from "./components/ModalComponent";
 import "./style.css";
-import mockData from "./components/random";
+import { mockData } from "./components/random";
+import { useSelector, useDispatch } from "react-redux";
+import { addRow } from "./features/tableSlice";
 
 
-export default function App() {
+export function App() {
     // store these table data into the redux toolkit and fetch these data from the redux
-    const [tableData, setTableData] = useState([]);
+    // const [tableData, setTableData] = useState([]);
+    const dispatch = useDispatch();
+    const tableData = useSelector((state) => state.table.tableData); // Get tableData from Redux
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [formData, setFormData] = useState(mockData);
+    const [formData, setFormData] = useState({});
 
     const handleChange = (event) => {
         // get name and its value
@@ -19,9 +23,9 @@ export default function App() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setTableData([...tableData, formData]);
-        setFormData(mockData); // Reset form to mock data after submission
-        setIsModalOpen(false); // Close the modal after adding data
+        dispatch(addRow(formData)); // Dispatch action to add row to Redux store
+        setFormData({}); // Reset form to mock data
+        setIsModalOpen(false); // Close the modal
     };
 
 

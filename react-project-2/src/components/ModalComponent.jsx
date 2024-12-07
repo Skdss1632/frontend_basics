@@ -2,7 +2,7 @@ import React from "react";
 import { InputComponent } from "./InputComponent";
 import "../style.css";
 
-export default function ModalComponent({ formData, handleChange, handleSubmit, closeModal }) {
+export function ModalComponent({ formData, handleChange, handleSubmit, closeModal }) {
     const inputFields = [
         { label: "Name", type: "text", name: "name", placeholder: "Enter name" },
         { label: "Gender", type: "text", name: "gender", placeholder: "Enter gender" },

@@ -1,4 +1,4 @@
-const mockData = {
+export const mockData = {
   name: "sk kr",
   gender: "Male",
   age: "30",
@@ -31,4 +31,3 @@ const mockData = {
   timestamp: "2024-12-01T10:30:00",
 };
 
-export default mockData;
