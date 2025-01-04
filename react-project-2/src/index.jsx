@@ -14,12 +14,3 @@ root.render(
 
 
 
-
-
-
-
-
-// import { StrictMode } from 'react'
-// import './index.css';
-// import App from './App';
-

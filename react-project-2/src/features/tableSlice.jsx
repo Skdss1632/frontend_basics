@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { mockData } from "../components/random";
 
 const initialState = {
-  tableData: [mockData], // Initial state for table data
+  tableData: mockData, // Initial state for table data
 };
 
 const tableSlice = createSlice({

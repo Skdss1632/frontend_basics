@@ -4,8 +4,11 @@ import { decrement, increment,incrementByAmount,reset } from './features/counter
 import { useState } from 'react';
 
 function App() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(0 );
+  // useSelector is used to get the data from the store or reducers like in this case we are getting the count(value) from the counterSlice
+  // state.counter.value in this (counter) is a name of the reducer
   const count = useSelector((state) => state.counter.value);
+  // useDispatch is used to dispatch the action to the store,, if want to execute the action so we need to dispatch the action
   const dispatch = useDispatch();
 
   function handleIncrementClick() {

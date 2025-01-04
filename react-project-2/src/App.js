@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { TableComponent } from "./components/TableComponent";
 import { ModalComponent } from "./components/ModalComponent";
 import "./style.css";
-import { mockData } from "./components/random";
 import { useSelector, useDispatch } from "react-redux";
 import { addRow } from "./features/tableSlice";
 
@@ -17,6 +16,7 @@ export function App() {
 
     const handleChange = (event) => {
         // get name and its value
+        // whenever the we fill the data in input fld in modal it will set that data in formData
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     };
@@ -28,6 +28,12 @@ export function App() {
         setIsModalOpen(false); // Close the modal
     };
 
+    const handleClose = (event) => {
+        console.log("Closing modal...");  // Log message to check if function is being called
+        setIsModalOpen(false);
+        setFormData({});
+    };
+    
 
 
     return (
@@ -39,7 +45,7 @@ export function App() {
                     formData={formData}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    closeModal={() => setIsModalOpen(false)}
+                    closeModal={handleClose}
                 />
             )}
             <TableComponent
