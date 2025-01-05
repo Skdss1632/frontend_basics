@@ -1,0 +1,5 @@
+1. webscoket - it is used in low latcency soft, two way communication b/w client and server, useful in real time updates like stocks
+2. axios - used for making http requests, it is a promise based http client for the browser and node.js
+3. createAsyncThunk
+4. lodash
+5. 
