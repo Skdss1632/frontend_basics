@@ -2,4 +2,6 @@
 2. axios - used for making http requests, it is a promise based http client for the browser and node.js
 3. createAsyncThunk
 4. lodash
-5. 
+5. useRef
+6. Fragment, useCallback, useRef, memo, useMemo
+7. import _, { cloneDeep, isEqual } from 'lodash';
