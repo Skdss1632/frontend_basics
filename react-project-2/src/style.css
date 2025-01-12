@@ -117,22 +117,26 @@ table th {
 .table-container {
     margin: 20px;
     padding: 10px;
-  }
+}
   
   .table-wrapper {
     max-height: 200px; /* Adjust as needed */
     overflow-y: auto;
-  }
+}
   
-  table {
+.table {
     border-collapse: collapse;
     width: 100%;
-  }
+}
   
-  thead th {
+.thead th {
     position: sticky;
     top: 0;
     z-index: 1;
-  }
+}
   
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
   
